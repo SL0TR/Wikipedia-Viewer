@@ -1,30 +1,74 @@
+/* color pallete : https://coolors.co/eaeaea-cbc5ea-82816d-313d5a-260f26 */
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Maven Pro', sans-serif;
 }
 body {
   height: 100vh;
   width: 100vw;
-
 }
+
 section {
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url('./img/background-wiki.jpg');
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
   background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
-.CustomSearch {
-  border: 1px solid #DDD;
+
+section h1 {
+  color: #260F26;
 }
-.CustomSearch input {
+
+.CustomSearch {
+  border-bottom: 1px solid #CBC5EA;
+}
+
+.CustomSearch i {
+  margin-right: .3em;
+  margin-top: .5em;
+  color: #CBC5EA;
+
+}
+
+.CustomSearch .search-input-box {
   border: none;
   background: none;
+  padding: .2em;
+  width: 4em;
+  transition: all .3s;
 }
-.CustomSearch input:focus {
-  border: none;
+
+.search-input-box:focus {
+  outline: none;
+  width: 20em;
+}
+
+.search-input-box:focus  .CustomSearch  {
+  border: 1px solid #DDD;
+  border-radius: .2em;  
+}
+
+.search-result-container {
+  min-height: 60vh;
+  width: 90%;
+  max-height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.search-result-box {
+  height: 5em;
+  width: 90%;
+  border: 3px solid #260F26;
+  border-radius: .3em;
+  background: #CBC5EA;
 }
