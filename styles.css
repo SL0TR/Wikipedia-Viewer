@@ -118,7 +118,7 @@ section h1 {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  padding: .5em;
+  padding: 1em;
   box-shadow: 1px 1px 10px black;
   position: relative;
   border-bottom-right-radius: 0em;
