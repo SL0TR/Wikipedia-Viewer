@@ -4,7 +4,7 @@
 function getData() {
   fetch("https://cors.io/?https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=4&prop=pageimages|" +
   "extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=what")
-    .then(res => {
+    .then(function (res) {
       res.json()
         .then(resp=>{
           pageData = resp.query.pages;
@@ -14,17 +14,18 @@ function getData() {
           document.querySelector(".search-result-container").appendChild(div);
           for (var key in pageData) {
             keyArr.push(key);
+            console.log(key);
             var div= document.createElement("div"); 
             div.setAttribute("class", "search-result-box");
             document.querySelector(".search-result-container").appendChild(div);              
           }
-          console.log(keyArr);
           // console.log(pageData[keyArr[0]]);       
         })
     })
-    .catch(err => {
+    .catch(function (err){
       console.log(err)
     })  
 }
 
 getData();
+
