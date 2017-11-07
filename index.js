@@ -9,15 +9,12 @@ function getData() {
         .then(resp=>{
           pageData = resp.query.pages;
           var keyArr = [];
-          var div= document.createElement("div"); 
-          div.setAttribute("class", "search-result-box");
-          document.querySelector(".search-result-container").appendChild(div);
           for (var key in pageData) {
             keyArr.push(key);
             console.log(key);
-            var div= document.createElement("div"); 
-            div.setAttribute("class", "search-result-box");
-            document.querySelector(".search-result-container").appendChild(div);              
+            // var div= document.createElement("div"); 
+            // div.setAttribute("class", "search-result-box");
+            // document.querySelector(".search-result-container").appendChild(div);              
           }
           // console.log(pageData[keyArr[0]]);       
         })
