@@ -28,4 +28,4 @@ function getData() {
 }
 
 getData();
-
+// THE API CORS IS NOT RESPONDING SOMETIMES AND IT's FUCKING ANNOYING
