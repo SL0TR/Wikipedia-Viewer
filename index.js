@@ -2,7 +2,7 @@
 
 // ES6 way to fetch api data and convert it to json 
 function getData() {
-  fetch("https://cors.io/?https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=4&prop=pageimages|" +
+  fetch("https://crossorigin.me/https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=4&prop=pageimages|" +
   "extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=what")
     .then(function (res) {
       res.json()
@@ -12,11 +12,11 @@ function getData() {
           for (var key in pageData) {
             keyArr.push(key);
             console.log(key);
-            // var div= document.createElement("div"); 
-            // div.setAttribute("class", "search-result-box");
-            // document.querySelector(".search-result-container").appendChild(div);              
+            domUpdateDiv();            
           }
-          // console.log(pageData[keyArr[0]]);       
+          domUpdateP();
+          console.log(pageData[keyArr[0]]);
+                 
         })
     })
     .catch(function (err){
@@ -26,5 +26,22 @@ function getData() {
 
 getData();
 
-// HAVE TO FIND OUT ANOTHER SOLVE FOR THIS CORS IO ISSUE FFS
-// THE API CORS IS NOT RESPONDING SOMETIMES AND IT's FUCKING ANNOYING
+
+
+function domUpdateDiv() {
+  var div= document.createElement("div"); 
+  div.setAttribute("class", "search-result-box");
+  document.querySelector(".search-result-container").appendChild(div);  
+}
+
+function domUpdateP () {
+  var p1 = document.createElement("p");
+  var p2 = document.createElement("p");
+  p1.setAttribute("class", "search-result-title");
+  p2.setAttribute("class", "search-result-desc");
+  document.getElementsByClassName("search-result-box")[0].appendChild(p1);
+  document.getElementsByClassName("search-result-box")[0].appendChild(p2);
+
+}
+
+// console.log(document.querySelector(".search-result-box").length);
