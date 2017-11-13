@@ -8,6 +8,8 @@
   font-size: 16px;
 }
 
+
+
 body {
   height: 100vh;
   width: 100vw;  
@@ -19,10 +21,8 @@ section {
   width: 100%;
   background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); 
   background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  min-height: 100vh;
+  overflow-y: scroll;
 }
 
 .wiki-icon {
@@ -31,12 +31,15 @@ section {
   z-index: 1;
   height: 100%;
   width: 70%;
+  left: 15%;
 }
 
 section h1 {
   color: #ecf0f1;
   font-size: 4em;
   z-index: 2;
+  text-align: center;
+  margin-top: 1em;
   font-family: 'Poiret One', cursive;
 }
 
@@ -45,6 +48,13 @@ section h1 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  top: 15em;
+  
+}
+
+a {
+  text-decoration: none;
 }
 
 .SearchContainer {
@@ -83,7 +93,7 @@ section h1 {
   width: 40em;
 }
 
-.search-submit-btn {
+.btn {
   width: 10em;
   height: 3em;
   z-index: 2;
@@ -97,7 +107,7 @@ section h1 {
   margin: .5em 0;
 }
 
-.search-submit-btn:hover {
+.btn:hover {
   border: none;
   background: #e74c3c;
   box-shadow: 1px 1px 10px black;
@@ -107,11 +117,9 @@ section h1 {
 .search-result-container {
   width: 90%;
   max-height: auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
   z-index: 2;
+  max-height: 30em;
+  overflow-y: auto;
 }
 
 .search-result-box {
@@ -126,7 +134,9 @@ section h1 {
   position: relative;
   border-bottom-right-radius: 0em;
   border-top-left-radius: 0em;
-  margin: .5em 0;
+  margin: .5em auto;
+  z-index: 5;
+  cursor: pointer;
 }
 
 .search-result-box p {
@@ -143,4 +153,6 @@ section h1 {
 .search-result-desc {
   line-height: 1.3em;
   letter-spacing: .05em;
+  color: #2e2e2e;
 }
+
