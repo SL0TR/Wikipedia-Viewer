@@ -218,6 +218,7 @@ i {
   cursor: pointer;
   transition: all .2s;
   z-index: 5;
+  color: #000;
 }
 
 .ion-social-linkedin:hover {
