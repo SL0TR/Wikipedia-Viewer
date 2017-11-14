@@ -49,7 +49,7 @@ $('.search-submit-btn').click(function (){
 
   getData(domUpdateSearchBox, domUpdateBoxParagraph, domUpdateFromAPI);
 
-  $('.container-search-and-btn').animate({top: '0em'}, 1000);
+  $('.container-search-and-btn').animate({top: '0em'}, 200);
 
   $( ".search-result-box" ).remove();
 
@@ -86,7 +86,7 @@ function domUpdateSearchBox () {
 
   for (i=0; i < keyArr.length; i++) {
 
-  $( "<a class='search-result-box' href='#' target='_blank'></a>" ).appendTo( "section" );
+  $( "<a class='search-result-box' href='#' target='_blank'></a>" ).appendTo( ".search-result-container" );
   
   }
  
