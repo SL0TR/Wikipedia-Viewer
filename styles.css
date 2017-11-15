@@ -96,6 +96,14 @@ a {
   width: 40em;
 }
 
+.error-message {
+  position: relative;
+  color: #c0392b;
+  font-size: .8em;
+  bottom: 1em;
+  display: none;
+}
+
 .btn-container {
   z-index: 5;
 }

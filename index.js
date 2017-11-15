@@ -12,7 +12,18 @@ function getData(domUpdateSearchBox, domUpdateBoxParagraph, domUpdateFromAPI) {
         type: 'GET',
         dataType: 'jsonp',
         success: function(a) {
+
+          if(jQuery.isEmptyObject(a.query)) {
+
+            $('.error-message').fadeIn();
+
+          } else {
+
+            $('.error-message').fadeOut();
+          }
+          
           pageJsonData = a['query']['pages'];
+
           keyArr = [];
           for (var key in pageJsonData) {
             keyArr.push(key);
@@ -20,8 +31,8 @@ function getData(domUpdateSearchBox, domUpdateBoxParagraph, domUpdateFromAPI) {
           domUpdateSearchBox();
           domUpdateBoxParagraph();
           domUpdateFromAPI();
-
           
+
           for(i=0; i < keyArr.length; i++) {
 
             searchResultBox = $( ".search-result-box" );
