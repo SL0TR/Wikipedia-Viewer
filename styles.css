@@ -30,8 +30,8 @@ section {
   opacity: .05;
   z-index: 1;
   height: 100%;
-  width: 70%;
-  left: 15%;
+  width: 50%;
+  left: 25%;
 }
 
 section h1 {
@@ -120,14 +120,36 @@ a {
   border-radius: .2em;
   color: #ecf0f1;
   margin: .5em;
+  position: relative;
+  overflow:hidden;
+  background: none;
+  z-index: 1;
   
 }
 
 .btn:hover {
   border: none;
-  background: #e74c3c;
   box-shadow: 1px 1px 10px black;
-  font-weight: bold;
+}
+
+
+
+.fill:before {
+  content: "";
+  position: absolute;
+  background: #e74c3c;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: -1;
+  border-radius: .2em;
+  -webkit-transition: top 0.09s ease-in;
+  z-index: -1;
+}
+
+.fill:hover:before {
+  top: 0;
 }
 
 .search-result-box {
@@ -195,7 +217,6 @@ a {
   align-items: center;
   margin: 0 auto;
   z-index: 5;
-  margin-top: 3em;
 }
 
 .my-info h3 {
