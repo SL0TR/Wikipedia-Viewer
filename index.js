@@ -16,6 +16,7 @@ function getData(domUpdateSearchBox, domUpdateBoxParagraph, domUpdateFromAPI) {
           if(jQuery.isEmptyObject(a.query)) {
 
             $('.error-message').fadeIn();
+            $(".my-info").css("position", "absolute");
 
           } else {
 
@@ -64,7 +65,7 @@ $('.search-submit-btn').click(function (){
 
   $( ".search-result-box" ).remove();
 
-  
+  $(".my-info").css("position", "relative");
 
 });
 
@@ -74,7 +75,6 @@ $('.get-random-page-btn').click(function (){
   window.open('https://en.wikipedia.org/wiki/Special:Random', '_blank');
 
 });
-
 
 // DOM MANUPULATION ACCORDING TO THE API CALL
 function domUpdateFromAPI() {
@@ -103,14 +103,10 @@ function domUpdateSearchBox () {
  
 }
 
-
-
-
 // CREATING NEW HTML FOR TITLE AND DESCRIPTION OF THE QUERY
 function domUpdateBoxParagraph () {
   $( "<p class='search-result-title'></p><p class='search-result-desc'></p>" ).appendTo( ".search-result-box");
 
 }
-
 
 });
